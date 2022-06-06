@@ -2,7 +2,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: lightblue;
+  background-color: rgb(124, 219, 236);
   height: 100vh;
   font-family: 'Rubik', sans-serif;
 }
@@ -14,7 +14,7 @@
   padding: 20px;
   text-align: center;
   box-shadow: 1px 1px 8px 0 #000e00;
-  background: linear-gradient(111deg, rgba(185, 185, 179, 0.466) 55%, rgba(155, 155, 154, 0.801) 93%);
+  background: linear-gradient(111deg, rgba(79, 116, 216, 0.466) 55%, rgba(6, 35, 202, 0.801) 93%);
 }
 
 .title{
@@ -29,8 +29,9 @@
   border: none;
   cursor: pointer;
   border-radius: 5px;
-  background-color: lightslategray;
+  background-color: rgb(5, 54, 102);
   box-shadow: 1px 1px 2px 0 #000e00;
+  color: white;
 }
 .info__btn:active{
   box-shadow: 0 0 0 0 #000a;
