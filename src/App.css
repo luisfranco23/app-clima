@@ -1,0 +1,38 @@
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: lightblue;
+  height: 100vh;
+  font-family: 'Rubik', sans-serif;
+}
+.climate{
+  display: grid;
+  grid-template-columns: auto auto;
+  width: 480px;
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 1px 1px 8px 0 #000e00;
+  background: linear-gradient(111deg, rgba(185, 185, 179, 0.466) 55%, rgba(155, 155, 154, 0.801) 93%);
+}
+
+.title{
+  grid-column: 1/ 3;
+}
+.info_img{
+  height: 80px;
+  width: 80px;
+
+}
+.info__btn{
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: lightslategray;
+  box-shadow: 1px 1px 2px 0 #000e00;
+}
+.info__btn:active{
+  box-shadow: 0 0 0 0 #000a;
+  transition: box-shadow 200ms ease;
+}
