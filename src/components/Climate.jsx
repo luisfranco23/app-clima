@@ -3,30 +3,7 @@ import axios from "axios";
 import hot from "../assets/img/cambio-climatico.png";
 import could from "../assets/img/lluvia.png";
 
-const Climate = () => {
-  const [location, setLocation] = useState();
-  const [climate, setClimate] = useState();
-
-  useEffect(() => {
-    const success = (pos) => {
-      const lat = pos.coords.latitude;
-      const lon = pos.coords.longitude;
-      setLocation({ lat, lon });
-    };
-    navigator.geolocation.getCurrentPosition(success);
-  }, []);
-
-  useEffect(() => {
-    if (location !== undefined) {
-      const API_key = "9dcf9e802372121e73487818a802eb5f";
-      const URL_API = `https://api.openweathermap.org/data/2.5/weather?lat=${location.lat}&lon=${location.lon}&appid=${API_key}`;
-
-      axios
-        .get(URL_API)
-        .then((res) => setClimate(res.data))
-        .catch((err) => console.log(err));
-    }
-  }, [location]);
+const Climate = ({climate}) => {
 
   const [operation, setOperation] = useState(false);
 
@@ -37,7 +14,7 @@ const Climate = () => {
   const fahrenheit = ((climate?.main.temp - 273.15) * 9) / 5 + 32;
   const celsius = climate?.main.temp - 273.15;
 
-  const humidity = climate?.main.humidity;
+  console.log(climate)
 
   return (
     <div className="climate">
@@ -60,7 +37,7 @@ const Climate = () => {
           {operation ? `${fahrenheit.toFixed(2)} ` : `${celsius.toFixed(2)} `}
           <button className="info__btn" onClick={pass}> {operation ? " °F" : " °C"} </button>
         </p>
-        <img className="info_img" src={humidity < 60 ? hot : could} alt="climate" />
+        <img className="info_img" src={climate && `http://openweathermap.org/img/wn/${climate.weather[0].icon}@2x.png`} alt="climate" />
       </div>
     </div>
   );
