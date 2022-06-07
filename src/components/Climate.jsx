@@ -36,6 +36,7 @@ const Climate = ({climate}) => {
           <button className="info__btn" onClick={pass}> {operation ? " °F" : " °C"} </button>
         </p>
         <img className="info_img" src={climate && `http://openweathermap.org/img/wn/${climate.weather[0].icon}@4x.png`} alt="climate" />
+        <p>{climate?.weather[0].description}</p>
       </div>
     </div>
   );
