@@ -14,8 +14,6 @@ const Climate = ({climate}) => {
   const fahrenheit = ((climate?.main.temp - 273.15) * 9) / 5 + 32;
   const celsius = climate?.main.temp - 273.15;
 
-  console.log(climate)
-
   return (
     <div className="climate">
       <h2 className="title">Weather today in {climate?.name} </h2>
@@ -37,7 +35,7 @@ const Climate = ({climate}) => {
           {operation ? `${fahrenheit.toFixed(2)} ` : `${celsius.toFixed(2)} `}
           <button className="info__btn" onClick={pass}> {operation ? " °F" : " °C"} </button>
         </p>
-        <img className="info_img" src={climate && `http://openweathermap.org/img/wn/${climate.weather[0].icon}@2x.png`} alt="climate" />
+        <img className="info_img" src={climate && `http://openweathermap.org/img/wn/${climate.weather[0].icon}@4x.png`} alt="climate" />
       </div>
     </div>
   );
